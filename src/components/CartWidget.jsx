@@ -1,6 +1,5 @@
 import React from 'react'
 import cart from '../assets/cart2.png'
-import '../App.css'
 
 
 function CartWidget() {
