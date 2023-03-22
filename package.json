@@ -2,11 +2,11 @@
   "name": "muymovie-giuria",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://juanjogiuria.github.io/muyMovies/",
+  "homepage": "http://juanjogiuria.github.io/muyMovies/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
