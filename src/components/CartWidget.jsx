@@ -5,8 +5,8 @@ import cart from '../assets/cart2.png'
 function CartWidget() {
     return (
         <div className='cart-container'>
-            <img src={cart} alt="" />
-            <div id='cart-count' className='cart-count'>1</div>
+            <i className='fa-solid fa-cart-shopping fa-shake cart'></i>
+            <div className="cart-count">1</div>
         </div>
     )
 }
