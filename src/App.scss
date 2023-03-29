@@ -76,18 +76,18 @@
         }
     }
 
-    .cart-container{
+    .cart-container {
         height: 100%;
         margin: 2px;
         align-items: center;
         display: flex;
 
-        .cart{
+        .cart {
             color: var(--color-title);
             font-size: 30px;
         }
 
-        .cart-count{
+        .cart-count {
             font-family: var(--font-text);
             text-align: center;
             font-weight: 900;
@@ -101,7 +101,7 @@
     }
 }
 
-.section-container{
+.section-container {
     background-color: var(--color-bg2);
 }
 
@@ -109,32 +109,31 @@
     background-color: var(--color-bg);
     height: max-content;
 
-    .title {
-        font-family: var(--font-title);
-        color: var(--color-title);
-        padding: 20px;
-        text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.494);
-        text-align: center;
-        font-size: 2.5rem;
-    }
+    .title-container {
+        padding: 30px;
 
-    .p-img-container {
-        display: flex;
+        .title {
+            font-family: var(--font-title);
+            color: var(--color-title);
+            text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.494);
+            text-align: center;
+            font-size: 4rem;
 
-        img {
-            width: 30%;
-            margin: 10px;
-            border-radius: 10px;
-            box-shadow: 5px 5px #00000028;
+            img {
+                width: 20%;
+            }
+        
+        }
+
+
+        .parrafo {
+            text-align: center;
+            font-family: var(--font-text);
+            color: var(--color-text);
+            font-size: 2rem;
         }
     }
 
-    .parrafo {
-        width: 60%;
-        font-family: var(--font-text);
-        color: var(--color-text);
-        padding: 10px;
-    }
 
     >button {
         margin: 10px;
@@ -166,14 +165,14 @@
 
 
     //ESTILOS PARA LAS CARD
-    .movies-container{
+    .movies-container {
         margin: auto;
         width: 100%;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
 
-        .card-container{
+        .card-container {
             width: 200px;
             margin: 1rem;
             box-sizing: border-box;
@@ -183,23 +182,25 @@
             box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.711);
             background-color: var(--color-bg2);
 
-            .card-img{
+            .card-img {
                 width: 100%;
                 height: 250px;
             }
 
-            .info-container{
+            .info-container {
                 padding: 10px;
                 min-height: 50px;
                 display: flex;
                 justify-content: space-between;
-                .movie-title{
+
+                .movie-title {
                     font-family: var(--font-title);
                     color: var(--color-text);
                     font-size: 80%;
                     font-weight: 200;
                 }
-                .rating{
+
+                .rating {
                     font-family: var(--font-text);
                     color: var(--color-title);
                     font-weight: 600;

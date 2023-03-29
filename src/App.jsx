@@ -1,11 +1,11 @@
 import './App.scss'
 import ItemListContainer from './components/ItemListContainer'
 import Navbar from './components/Navbar'
-import SearchSection from './components/SearchSection'
+import logo from './assets/logo.png'
 
 
 function App() {
-  const title = 'Muy Movie'
+  const title = logo
   return (
     <>
       <Navbar />
