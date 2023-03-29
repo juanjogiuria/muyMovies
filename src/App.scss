@@ -12,6 +12,7 @@
     justify-content: space-between;
     height: 8vh;
     background-color: var(--color-bg2);
+    position: sticky;
 
     .search-container {
         position: relative;
@@ -100,9 +101,13 @@
     }
 }
 
+.section-container{
+    background-color: var(--color-bg2);
+}
+
 .body-container {
     background-color: var(--color-bg);
-    height: 100vh;
+    height: max-content;
 
     .title {
         font-family: var(--font-title);
@@ -156,4 +161,50 @@
             font-size: 25px;
         }
     }
+
+
+    //ESTILOS PARA LAS CARD
+    .movies-container{
+        margin: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .card-container{
+            width: 200px;
+            margin: 1rem;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.711);
+            background-color: var(--color-bg2);
+
+            .card-img{
+                width: 100%;
+                height: 250px;
+            }
+
+            .info-container{
+                padding: 10px;
+                min-height: 50px;
+                display: flex;
+                justify-content: space-between;
+                .movie-title{
+                    font-family: var(--font-title);
+                    color: var(--color-text);
+                    font-size: 80%;
+                    font-weight: 200;
+                }
+                .rating{
+                    font-family: var(--font-text);
+                    color: var(--color-title);
+                    font-weight: 600;
+                }
+            }
+        }
+
+    }
+
 }

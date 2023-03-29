@@ -1,6 +1,7 @@
 import './App.scss'
 import ItemListContainer from './components/ItemListContainer'
 import Navbar from './components/Navbar'
+import SearchSection from './components/SearchSection'
 
 
 function App() {
