@@ -4,7 +4,7 @@ import Card from './Card'
 import Buttons from './Buttons'
 
 let base_url = "https://api.themoviedb.org/3/movie/"
-let API_key = "?api_key=5d13f11367ab0f16d0af451127a33a38"
+let API_key = "?api_key=5d13f11367ab0f16d0af451127a33a38&language=es-ES"
 let img_path = "https://image.tmdb.org/t/p/w500"
 let img_path_original = "https://image.tmdb.org/t/p/original"
 

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Card from './Card'
 
-let API_key = "&api_key=5d13f11367ab0f16d0af451127a33a38"
+let API_key = "&api_key=5d13f11367ab0f16d0af451127a33a38&language=es-ES"
 let base_url = "https://api.themoviedb.org/3"
 let url = base_url + "/discover/movie?sort_by=popularity.desc" + API_key
+
 
 function ItemListContainer({ title }) {
     
