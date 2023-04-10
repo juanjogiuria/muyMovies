@@ -6,7 +6,7 @@ let base_url = "https://api.themoviedb.org/3"
 let url = base_url + "/discover/movie?sort_by=popularity.desc" + API_key
 
 function ItemListContainer({ title }) {
-    const [count, setCount] = useState(0)
+    
     const [movies, setMovies] = useState([])
     const [url_set, setUrl] = useState(url)
 
@@ -21,14 +21,6 @@ function ItemListContainer({ title }) {
 
     }, [url_set])
 
-
-    const handleCountIncrease = () => {
-        setCount(count + 1)
-    }
-
-    const handleCountDecrease = () => {
-        setCount(count - 1)
-    }
 
     return (
         <div className='body-container'>
@@ -51,20 +43,8 @@ function ItemListContainer({ title }) {
                 }
             </div>
 
-            {/* //BOTON DE CANTIDAD */}
-            <button className='button-cantidad'>
-                <div className='decrease' onClick={handleCountDecrease}>
-                    -
-                </div>
-
-                {count}
-
-                <div className='increase' onClick={handleCountIncrease}>
-                    +
-                </div>
-            </button>
-            {/* //BOTON 'AGREGAR AL CARRITO' */}
-            <button className='button-agregar'> Agregar al carrito</button>
+        
+            
         </div>
     )
 }

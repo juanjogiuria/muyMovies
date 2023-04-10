@@ -2,11 +2,15 @@ import React from 'react'
 import logo from '../assets/logo.png'
 import CartWidget from './CartWidget'
 import SearchInput from './SearchInput'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <header className='nav-container'>
-      <img className='logo' src={logo} alt="" />
+      <Link to='/'>
+        <img className='logo' src={logo} alt="" />
+      </Link>
+      
       
       <nav className='categories-container'>
         <ul className='categories'>
