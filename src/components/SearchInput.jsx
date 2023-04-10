@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function SearchInput() {
+
   return (
 
-    <div className='search-container'>
+    <form className='search-container'>
         <input type="text" placeholder='Search'/>
         <i className="fa-solid fa-magnifying-glass"></i>
-    </div>
+    </form>
 
   )
 }

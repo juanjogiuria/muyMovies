@@ -21,8 +21,6 @@ const Navbar = () => {
         </ul>
       </nav>
 
-      <SearchInput />
-
       <CartWidget />
 
     </header>
