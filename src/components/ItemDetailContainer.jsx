@@ -15,12 +15,14 @@ function ItemDetailContainer() {
   console.log(`Valor de pid: ${pid}`)
 
   let url = base_url + `${pid}` + API_key
+  let video_url = base_url + `${pid}` + '/videos' + API_key
   console.log(`el link: ${url}`)
 
 
 
   const [url_set, setUrl] = useState(url)
   const [movie, setMovie] = useState([])
+  const [trailer, setTrailer] = useState([])
 
 
   useEffect(() => {
@@ -31,12 +33,19 @@ function ItemDetailContainer() {
 
   }, [url_set])
 
+  console.log(`Youtube: https://api.themoviedb.org/3/movie/${pid}/videos${API_key}`)
+  console.log(video_url)
 
-  //let array = [{id: 1, name: 'juanjo'},
- //              {id: 2, name: 'azul'}]
-  //console.log((movie.genres)[0].name)
-  //console.log(array)
-  //console.log(array[0].name)
+  
+  useEffect(() => {
+    fetch(video_url).then(res => res.json()).then(data => {
+      console.log(data)
+      setTrailer(data)
+    })
+
+  }, [video_url])
+
+
 
 
 
@@ -48,15 +57,24 @@ function ItemDetailContainer() {
 
         <img src={img_path + movie.poster_path} className="detail-img" />
         <div className='info-container'>
-          <h1 className='detail-title'>{movie.original_title}</h1>
+          <h1 className='detail-title'>{movie.title} <p className='detail-fecha'> ( {movie.release_date} ) </p> </h1>
           <div className='genres-container'>
             {
               (movie.genres)?.map((genre) =>(
-                <h4 className='detail-genre' key={genre.id}>{genre.name}</h4>
+                <h4 className='detail-genre' key={genre.id}>{genre.name}   |</h4>
               ))
             }
           </div>
           <h2 className='detail-overview'>{movie.overview}</h2>
+          <div className='trailer-container'>
+          {
+            !trailer.results ? <h1>Not a trailer</h1> : trailer.results.length ? <iframe src={`https://www.youtube.com/embed/${trailer.results[0].key}`} frameborder="0" className='trailer' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> : <h1>Trailer no disponible</h1>
+          }
+          </div>
+          
+
+
+
           <Buttons/>
 
         </div>

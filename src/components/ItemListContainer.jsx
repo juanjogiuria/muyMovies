@@ -34,7 +34,7 @@ function ItemListContainer({ title }) {
             </div>
 
             <form className='search-container'>
-                <input type="text" placeholder='Busque, dale, hagalo...' onChange={(e)=>
+                <input type="text" placeholder='Busca lo que quieras, no hay nada que no tenga...' onChange={(e)=>
                     {
                         setSearch(e.target.value)
                         setUrl(search_url + search)
