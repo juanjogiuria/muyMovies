@@ -21,27 +21,54 @@ function ItemListContainer({ title }) {
 
     }, [url_set])
 
+    let API_key = "api_key=5d13f11367ab0f16d0af451127a33a38&language=es-ES"
+    let base_url = "https://api.themoviedb.org/3"
+    let genres_url = base_url + '/genre/movie/list?' + API_key
 
+    const [generos, setGeneros] = useState([])
+
+    const handleCategory = (category) => {
+        console.log(category)
+        setUrl("https://api.themoviedb.org/3/discover/movie?" + API_key + "&with_genres=" + category)
+    }
+
+    useEffect(() => {
+        fetch(genres_url).then(res => res.json()).then(data => {
+            console.log(data)
+            setGeneros(data)
+        })
+
+    }, [])
 
     return (
         <div className='body-container'>
             <section className='title-search'>
 
-            <div className="title-container">
+                <div className="title-container">
 
-                <h1 className='title'>¡ Bienvenidos a <img className='title-img' src={title} /> ! </h1>
-                <p className="parrafo">Millones de peliculas, series y personajes por conocer. Adelante.</p>
-            </div>
+                    <h1 className='title'>¡ Bienvenidos a <img className='title-img' src={title} /> ! </h1>
+                    <p className="parrafo">Millones de peliculas, series y personajes por conocer. Adelante.</p>
+                </div>
 
-            <form className='search-container'>
-                <input type="text" placeholder='Busca lo que quieras, no hay nada que no tenga...' onChange={(e)=>
-                    {
+
+                <form className='search-container'>
+                    <input type="text" placeholder='Busca lo que quieras, no hay nada que no tenga...' onChange={(e) => {
                         setSearch(e.target.value)
                         setUrl(search_url + search)
-                        }}/>
-                <i className="fa-solid fa-magnifying-glass"></i>
-            </form>
+                    }} />
+                    <i className="fa-solid fa-magnifying-glass"></i>
+                </form>
             </section>
+
+            <div className="categorys-container">
+                <ul>
+                    {
+                        (generos.genres)?.map((genre) => (
+                            <li onClick={(e) => handleCategory(genre.id)} key={genre.id} className='categorys'>{genre.name}</li>
+                        ))
+                    }
+                </ul>
+            </div>
 
             <div className="movies-container">
                 {

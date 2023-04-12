@@ -8,8 +8,8 @@
 
 
 .nav-container {
-    
-    
+
+
     display: flex;
     justify-content: space-between;
     height: 8vh;
@@ -26,9 +26,9 @@
         height: 80%;
         align-self: center;
     }
-    
-    .categories-container { 
-        
+
+    .categories-container {
+
         width: 70%;
         display: flex;
         align-items: center;
@@ -40,7 +40,7 @@
             justify-content: space-around;
 
             li {
-                
+
                 padding: 10px 15px;
                 font-size: 1em;
                 cursor: pointer;
@@ -48,23 +48,27 @@
                 color: var(--color-text);
                 display: block;
 
-                &:hover > ul{
+                &:hover>ul {
                     display: block;
 
                 }
-                .category-container{
-                    transition: 2s;
+
+                .category-container {
                     display: none;
-                    position:absolute;
+                    position: absolute;
                     padding-top: 15px;
 
-                    .category{
+
+
+                    .category {
                         background-color: #2d2727dd;
-                        &:hover{
+
+                        &:hover {
+                            transition: 0.2s;
                             background-color: var(--color-title);
                             color: var(--color-bg2);
                         }
-                        
+
                     }
                 }
             }
@@ -72,7 +76,7 @@
     }
 
     .cart-container {
-        
+
         height: 100%;
         margin: 2px;
         align-items: center;
@@ -172,9 +176,37 @@
             }
         }
 
+        
     }
+    
+    .categorys-container {
+        text-align: center;
+        margin-top: 10px;
 
+        ul{
+            
+            .categorys{
+                display: inline-block;
+                cursor: pointer;
+                margin: 2px;
+                padding: 10px;
+                font-size: 13px;
+                color: white;
+                font-family: var(--font-text);
+                border: 1px solid var(--color-title);
+                border-radius: 30px;
+    
+                &:hover{
+                    background-color: var(--color-title);
+                    transition: 0.3s;
+                }
+    
+            }
 
+        }
+        
+    }
+    
 
 
 
@@ -263,7 +295,7 @@
             width: 50%;
             padding: 10px;
             padding-top: 40px;
-            
+
             //transform: translate(10%);
 
             .detail-title {
@@ -303,18 +335,19 @@
                 text-shadow: 1px 1px black;
             }
 
-            .trailer-container{
+            .trailer-container {
                 height: 300px;
                 width: 700px;
                 display: flex;
                 margin-top: 10px;
                 margin-bottom: 10px;
-                .trailer{
+
+                .trailer {
                     width: 100%;
                     height: 100%;
                 }
 
-                h1{
+                h1 {
                     width: 100%;
                     color: white;
                     text-align: center;
