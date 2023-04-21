@@ -5,22 +5,25 @@ import logo from './assets/logo.png'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import ItemDetailContainer from './components/ItemDetailContainer'
 
+import { CartContextProvider } from './context/CartContext'
+
 
 function App() {
   const title = logo
   return (
     <>
-      <BrowserRouter>
+      <CartContextProvider>
+        <BrowserRouter>
 
-        <Navbar />
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<ItemListContainer title={title} />} />
+            <Route path='/detail/:pid' element={<ItemDetailContainer />} />
+            <Route path='*' element={<Navigate to='/' />} />
+          </Routes>
+        </BrowserRouter>
 
-        <Routes>
-          <Route path='/' element={<ItemListContainer title={title} />} />
-          <Route path='/detail/:pid' element={<ItemDetailContainer/>} />
-          <Route path='*' element={<Navigate to='/' />} />
-        </Routes>
-
-      </BrowserRouter>
+      </CartContextProvider>
     </>
   )
 }

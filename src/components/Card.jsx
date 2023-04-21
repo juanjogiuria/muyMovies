@@ -5,12 +5,12 @@ function Card(movie) {
 
   let img_path = "https://image.tmdb.org/t/p/w500"
 
-  console.log(movie)
+
 
 
   return (
     <Link to={`/detail/${movie.info.id}`}>
-      <div className='card-container'>
+      <div className='card-container' data-aos="zoom-in">
         <img src={img_path + movie.info.poster_path} className="card-img" />
         <div className="info-container">
           <h4 className="movie-title">{movie.info.title}</h4>

@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useCartContext } from '../context/CartContext'
 
-function Buttons() {
+function ItemCount({movie}) {
+
+    const {addToCart , cartList} = useCartContext()
 
     const [count, setCount] = useState(0)
 
@@ -9,8 +12,15 @@ function Buttons() {
     }
 
     const handleCountDecrease = () => {
+        if(count >= 1)
         setCount(count - 1)
     }
+
+    const onAdd = () => {
+        addToCart(movie, count)
+    }
+
+    
 
 
 
@@ -28,9 +38,9 @@ function Buttons() {
                 </div>
             </button>
             {/* //BOTON 'AGREGAR AL CARRITO' */}
-            <button className='button-agregar'> Agregar al carrito</button>
+            <button className='button-agregar' onClick={onAdd}> Agregar al carrito </button>
         </div>
     )
 }
 
-export default Buttons
+export default ItemCount
