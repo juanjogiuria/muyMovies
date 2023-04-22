@@ -46,7 +46,7 @@ function ItemListContainer({ title }) {
 
         setBg(img_path + movies[index].backdrop_path)
 
-        if (index < 6) {
+        if (index < 10) {
             setIndex(index + 1)
         } else {
             setIndex(0)
@@ -58,7 +58,7 @@ function ItemListContainer({ title }) {
 
         if (movies.length != 0) {
 
-            const interval = setInterval(changeBackGround, 6000)
+            const interval = setInterval(changeBackGround, 4000)
 
             return () => clearInterval(interval)
 

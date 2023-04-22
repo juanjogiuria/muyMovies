@@ -1,0 +1,31 @@
+.categorys-container {
+    text-align: center;
+
+    padding-top: 10px;
+
+    ul {
+
+        .categorys {
+            display: inline-block;
+            cursor: pointer;
+            margin: 2px;
+            padding: 10px;
+            font-size: 80%;
+            color: rgba(255, 255, 255, 0.748);
+            font-family: var(--font-text);
+            border: 1px solid rgba(238, 130, 238, 0.153);
+            border-radius: 30px;
+            background-color: #432d45a2;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.208);
+
+            &:hover {
+                background-color: var(--color-title);
+                color: white;
+                transition: 0.3s;
+            }
+
+        }
+
+    }
+
+}

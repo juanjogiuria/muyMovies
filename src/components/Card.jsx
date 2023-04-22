@@ -15,6 +15,9 @@ function Card(movie) {
         <div className="info-container">
           <h4 className="movie-title">{movie.info.title}</h4>
           <p className="rating">{movie.info.vote_average}</p>
+          {/* <i className="fa-solid fa-certificate fa-spin-pulse fa-2xl rating-icon" Style="color: #24d630;"></i> */}
+          <i className="fa-sharp fa-solid fa-star fa-beat-fade fa-xl rating-icon" Style="color: #fdd130;"></i>
+        
         </div>
         <div>
         </div>

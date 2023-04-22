@@ -1,0 +1,134 @@
+.detail-bg {
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+
+    .detail-container {
+
+        width: 100%;
+        height: max-content;
+        backdrop-filter: blur(1px) saturate(30%) brightness(40%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+
+        .detail-img {
+            width: 25rem;
+            height: 30rem;
+            margin: 10px;
+            border-radius: 20px;
+            box-shadow: 0 10px 10px var(--color-title);
+        }
+
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            padding: 10px;
+            padding-top: 40px;
+
+            //transform: translate(10%);
+
+            .detail-title {
+                color: var(--color-title);
+                font-family: var(--font-title);
+                font-size: 40px;
+                text-shadow: 0 2px 2px black;
+                display: flex;
+
+                .detail-fecha {
+
+                    font-weight: 100;
+                    font-size: 12px;
+                    margin: 5px;
+                    align-self: end;
+                    color: var(--color-text);
+                    font-family: var(--font-text);
+                }
+            }
+
+            .genres-container {
+                display: flex;
+
+                .detail-genre {
+                    color: white;
+                    font-family: var(--font-text);
+                    padding: 3px;
+                    text-shadow: 0 1px 1px black;
+                }
+            }
+
+            .detail-overview {
+                color: var(--color-text);
+                font-family: var(--font-text);
+                font-weight: 100;
+                font-size: 15px;
+                text-shadow: 1px 1px black;
+            }
+
+            .trailer-container {
+                height: 300px;
+                width: 700px;
+                display: flex;
+                margin-top: 10px;
+                margin-bottom: 10px;
+
+                .trailer {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                h1 {
+                    width: 100%;
+                    color: white;
+                    text-align: center;
+                    justify-self: center;
+                    align-self: center;
+                    font-family: var(--font-text);
+                    font-weight: 100;
+                    font-size: 15px;
+                }
+            }
+
+
+            .button-container {
+                display: flex;
+
+                button {
+                    margin: 10px;
+                    font-size: 16px;
+                    padding: 20px;
+                    border-radius: 10px;
+                    background-color: var(-color-bg2);
+                    color: var(--color-text);
+                    border: 2px solid var(--color-title);
+                    transition-duration: 0.4s;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: transparent;
+                        color: var(--color-title);
+                    }
+                }
+
+                .button-cantidad {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 165px;
+
+                    div {
+                        font-size: 25px;
+                    }
+                }
+
+            }
+
+        }
+    }
+}
