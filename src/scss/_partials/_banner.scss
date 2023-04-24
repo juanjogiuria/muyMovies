@@ -43,6 +43,7 @@
                 font-size: 1.5rem;
                 background-color: #4135432e;  
                 border-radius: 15px; 
+                
             }
         }
 
@@ -54,6 +55,7 @@
 
             input {
                 box-sizing: border-box;
+                box-shadow: 0  0 5px rgba(137, 61, 200, 0.508);
                 color: var(--color-title);
                 padding: 10px 10px 10px 35px;
                 width: 100%;

@@ -11,10 +11,10 @@ export const useCartContext = () => useContext(CartContext)
 export const CartContextProvider = ({ children }) => {
 
     const [cartList, setCartList] = useState([])
+    const [totalItems, setTotalItems] = useState(0)
 
     const addToCart = (newMovie, cantidad) => {
         let searchMovie = cartList.find(movie => movie.pelicula === newMovie)
-        console.log(searchMovie)
 
         if(cantidad>0){
 
@@ -28,12 +28,19 @@ export const CartContextProvider = ({ children }) => {
         }
 
     }
-    console.log(cartList)
+
+    const sumarItems = (cantidad) => {
+        setTotalItems(totalItems + cantidad)
+    }
+
 
     return (
             <CartContext.Provider value={{
                 cartList,
-                addToCart
+                totalItems,
+                addToCart,
+                sumarItems
+
             }}>
 
                 {children}

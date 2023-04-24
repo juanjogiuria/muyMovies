@@ -3,7 +3,7 @@ import { useCartContext } from '../context/CartContext'
 
 function ItemCount({movie}) {
 
-    const {addToCart , cartList} = useCartContext()
+    const {addToCart , cartList, sumarItems} = useCartContext()
 
     const [count, setCount] = useState(0)
 
@@ -18,6 +18,7 @@ function ItemCount({movie}) {
 
     const onAdd = () => {
         addToCart(movie, count)
+        sumarItems(count)
     }
 
     
