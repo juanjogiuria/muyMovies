@@ -14,10 +14,11 @@
         align-self: center;
         width: 70%;
         background-color: rgba(0, 0, 0, 0.109);
+        margin-bottom: 1.5rem;
         
         h1{
             padding: 5px;
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 100;
             font-family: var(--font-title);
             color: var(--color-text);
@@ -45,7 +46,7 @@
                 background-position: 100% 20%;
                 border-bottom: 3px unset var(--color-bg2);
                 width: 100%;
-                transition: 1s;
+                transition: 0.6s;
                 overflow: hidden;
         
                 .img-item-cart {
@@ -74,9 +75,11 @@
                         font-family: var(--font-text);
                         color: var(--color-text);
                         font-size: 0.8rem;
+                        
         
                         h4 {
                             margin-right: 10px;
+                            font-weight: 100;
                         }
                     }
                 }
@@ -108,11 +111,12 @@
                     z-index: 1;
                     transform: scale(1.05);
                     position: relative;
+                    box-shadow: 0 0 15px rgba(185, 108, 253, 0.749);
 
-                    .img-item-cart {
-                        width: 12rem;
-                        height: 15rem;
-                    }
+                        // .img-item-cart {
+                        //     width: 12rem;
+                        //     height: 15rem;
+                        // }
         
                     .title-genre-container {
                         backdrop-filter: blur(0px) saturate(80%) brightness(50%);
