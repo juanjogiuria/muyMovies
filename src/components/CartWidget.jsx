@@ -9,7 +9,7 @@ function CartWidget() {
     
     return (
         <Link to={`/cart`}>
-        <div className='cart-container'>
+        <div className='cart-container-nav'>
             <i className='fa-solid fa-cart-shopping fa-shake cart'></i>
             <div className="cart-count">{totalItems}</div>
         </div>
