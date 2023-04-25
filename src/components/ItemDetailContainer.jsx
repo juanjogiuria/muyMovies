@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import ItemCount from './ItemCount'
 
 let base_url = "https://api.themoviedb.org/3/movie/"
-let API_key = "?api_key=5d13f11367ab0f16d0af451127a33a38&language=es-ES"
+let API_key = "?api_key=5d13f11367ab0f16d0af451127a33a38&language=us-US"
 let img_path = "https://image.tmdb.org/t/p/w500"
 let img_path_original = "https://image.tmdb.org/t/p/original"
 
