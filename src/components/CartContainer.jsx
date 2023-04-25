@@ -14,8 +14,16 @@ function CartContainer() {
 
     return (
         <div className='cart-container'>
-            <div className='title-container'>
-                <h1>Mi carrito de compras:</h1>
+            <div className='info-container'>
+                <div className='title-container'>
+                    <h1>Mi carrito de compras:</h1>
+                </div>
+                <Link to='/' className='button-container'>
+                    <button className='seguir-comprando'>
+                        Seguir comprando
+                    </button>
+                </Link>
+
             </div>
 
             <div className='all-items-container'>
