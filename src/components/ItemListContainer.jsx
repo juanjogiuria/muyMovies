@@ -20,7 +20,6 @@ function ItemListContainer({ title }) {
         fetch(url_set).then(res => res.json()).then(data => {
             setMovies(data.results)
         })
-        console.log(movies)
     }, [url_set])
 
     let API_key = "api_key=5d13f11367ab0f16d0af451127a33a38&language=es-ES"

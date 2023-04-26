@@ -14,8 +14,8 @@
         display: flex;
         width: 70%;
         align-self: center;
+        align-items: center;
         justify-content: space-between;
-        margin-bottom: 0.5rem;
 
         .title-container {
     
@@ -26,37 +26,43 @@
                 font-size: 1.5rem;
                 font-weight: 100;
                 font-family: var(--font-title);
-                color: var(--color-text);
-                text-shadow: 0 0 10px rgb(0, 0, 0);
+                color: var(--color-title);
+                text-shadow: 2px 2px rgb(0, 0, 0);
             }
         }
-    
-        .button-container {
-            align-self: center;
-            display: flex;
-            justify-content: end;
-    
-            .seguir-comprando {
-                font-size: 16px;
-                padding: 15px;
-                border-radius: 10px;
-                background-color: var(-color-bg2);
-                color: var(--color-text);
-                border: 2px solid var(--color-title);
-                transition-duration: 0.4s;
-                cursor: pointer;
-    
-                &:hover {
-                    background-color: transparent;
-                    color: var(--color-title);
-                }
-            }
-        }
+
 
     }
 
+    .reference-container{
+        color: var(--color-text);
+        font-family: var(--font-text);
+        font-size: 1rem;
+        width: 70%;
+        padding-left: 8rem;
+        padding-right: 4.5rem;
+        margin-bottom: 0.5rem;
+        align-self: center;
+        display: flex;
+        align-items: end;
+        text-align: center;
+        .reference-pelicula{
+            width: 80%;
+        }
+        .reference-cantidad{
+            width: 20%;
+            
+        }
+        .reference-precio-unidad{
+            width: 20%;
+        }
+        .reference-precio-total{
+            width: 20%;
+        }
+    }
+
     .all-items-container {
-        min-height: 100%;
+        min-height: 50vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -78,6 +84,22 @@
                 width: 100%;
                 transition: 0.6s;
                 overflow: hidden;
+                .delete-container{
+                    backdrop-filter: blur(2px) saturate(10%) brightness(20%);
+                    display: flex;
+                    justify-content: center;
+                    border: 1px solid rgba(0, 0, 0, 0.095);
+                    width: 10%;
+                    .delete-icon{
+                        justify-self: end;
+                        align-self: center;
+                        right: 15%;
+                        z-index: 1;
+                        padding: 10px;
+                        font-size: 1.5rem;
+                        color: rgb(185, 108, 253);
+                    }
+                }
 
                 .img-item-cart {
                     width: 8rem;
@@ -114,23 +136,50 @@
                     }
                 }
 
-                .count-price-container {
-                    width: 10%;
+                .count-container {
+                    width: 20%;
                     backdrop-filter: blur(2px) saturate(10%) brightness(20%);
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
+                    border: 1px solid rgba(0, 0, 0, 0.095);
 
                     .count-item-cart {
                         margin: 3px;
                         color: var(--color-title);
                         font-family: var(--font-title);
-                        font-size: 0.6rem;
+                        font-size: 0.9rem;
                     }
+                }
+
+                .price-container {
+                    width: 20%;
+                    backdrop-filter: blur(2px) saturate(10%) brightness(20%);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid rgba(0, 0, 0, 0.095);
 
                     .price-item-cart {
-                        font-size: 0.7rem;
+                        font-size: 0.9rem;
+                        font-family: var(--font-text);
+                        color: var(--color-text);
+                    }
+                }
+
+                .total-item-container {
+                    width: 20%;
+                    backdrop-filter: blur(2px) saturate(10%) brightness(20%);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid rgba(255, 244, 128, 0.095);
+
+                    .total-item-cart {
+                        font-size: 0.9rem;
                         font-family: var(--font-text);
                         color: var(--color-text);
                     }
@@ -148,12 +197,27 @@
                     //     height: 15rem;
                     // }
 
-                    .title-genre-container {
+                    .delete-container{
                         backdrop-filter: blur(0px) saturate(80%) brightness(50%);
+                        border: 0px solid black;
                     }
 
-                    .count-price-container {
+                    .title-genre-container {
                         backdrop-filter: blur(0px) saturate(80%) brightness(50%);
+                        border: 0px solid black;
+                    }
+
+                    .count-container {
+                        backdrop-filter: blur(0px) saturate(80%) brightness(50%);
+                        border: 0px solid black;
+                    }
+                    .price-container {
+                        backdrop-filter: blur(0px) saturate(80%) brightness(50%);
+                        border: 0px solid black;
+                    }
+                    .total-item-container{
+                        backdrop-filter: blur(0px) saturate(80%) brightness(50%);
+                        border: 0px solid black;
                     }
                 }
             }
@@ -162,10 +226,71 @@
 
     }
 
+    
     .total-container {
-        height: 70vh;
+        width: 70%;
+        min-height: 50vh;
+        margin-top: 1rem;
+        align-self: center;
         background-image: url("/src/assets/textura6.png");
         background-repeat: no-repeat;
         background-size: cover;
+        display: flex;
+        justify-content: end;
+        .total{
+            width: 60%;
+            padding-top: 5px;
+
+            .total-legend{
+                font-family: var(--font-title);
+                color: var(--color-title);
+                font-size: 2rem;
+                font-weight: 900;
+                text-shadow: 1px 1px black;
+            }
+            .total-value{
+                font-family: var(--font-text);
+                color: var(--color-text);
+                font-size: 2rem;
+                margin: 15px;
+                text-shadow: 1px 1px black;
+            }
+        }
+        .button-container {
+    
+            .seguir-comprando {
+                font-size: 16px;
+                padding: 15px;
+                border-radius: 10px;
+                background-color: var(-color-bg2);
+                color: var(--color-text);
+                border: 2px solid var(--color-title);
+                transition-duration: 0.4s;
+                cursor: pointer;
+    
+                &:hover {
+                    background-color: transparent;
+                    color: var(--color-title);
+                }
+            }
+        }
+        .finish-container{
+    
+            .finalizar-compra {
+                font-size: 16px;
+                padding: 15px;
+                border-radius: 10px;
+                background-color: var(-color-bg2);
+                color: var(--color-text);
+                border: 2px solid var(--color-title);
+                transition-duration: 0.4s;
+                cursor: pointer;
+    
+                &:hover {
+                    background-color: transparent;
+                    color: var(--color-title);
+                }
+            }
+        }
     }
 }
