@@ -9,13 +9,12 @@ let img_path_original = "https://image.tmdb.org/t/p/original"
 
 function CartContainer() {
 
-    const { cartList, calcularPrecio, calcularTotalCart, deleteItem, setCartList } = useCartContext()
+    const { cartList, calcularPrecio, calcularTotalCart, deleteItem, setCartList, restarItems } = useCartContext()
 
     const onDelete = (movie) => {
-            deleteItem(movie)
+        deleteItem(movie)
+        restarItems()
     }
-
-
 
 
     return (
@@ -34,8 +33,9 @@ function CartContainer() {
 
             <div className='all-items-container'>
                 {
-                    (cartList).map((movie) => (
-                        <Link className='link-container' key={movie.pelicula.id}>
+
+                    cartList.length ? (cartList).map((movie) => (
+                        <div className='link-container' key={movie.pelicula.id}>
 
 
                             <div className='item-container' style={{ backgroundImage: `url("${img_path_original + movie.pelicula.backdrop_path}")` }} >
@@ -43,7 +43,7 @@ function CartContainer() {
 
                                 <img className='img-item-cart' src={img_path + movie.pelicula.poster_path} alt="" />
 
-                                <div className='title-genre-container'>
+                                <Link to={`/detail/${movie.pelicula.id}`} className='title-genre-container'>
                                     <h1 className="title-item-cart"> {movie.pelicula.title} </h1>
                                     <div className='genre-item-cart'>
                                         {
@@ -54,7 +54,7 @@ function CartContainer() {
 
                                     </div>
 
-                                </div>
+                                </Link>
 
                                 <div className='count-container'>
                                     <span className='count-item-cart'>X{movie.cantidad}</span>
@@ -63,17 +63,22 @@ function CartContainer() {
                                     <span className='price-item-cart'>${calcularPrecio(movie.pelicula)}</span>
                                 </div>
                                 <div className='total-item-container'>
-                                    <span className='total-item-cart'>${calcularPrecio(movie.pelicula) * movie.cantidad}</span>
+                                    <span className='total-item-cart'>${(calcularPrecio(movie.pelicula) * movie.cantidad).toFixed(2)}</span>
                                 </div>
 
                                 <div className='delete-container' onClick={() => onDelete(movie)}>
-                                    
+
                                     <i className="fa-solid fa-square-xmark delete-icon"></i>
 
                                 </div>
                             </div>
-                        </Link>
+                        </div>
                     ))
+                        :
+                        <div className='cart-vacio'>
+                            <span>No tienes elementos en el carrito</span>
+                            <Link to="/" className='link'>← Volver al inicio</Link>
+                        </div>
                 }
             </div>
 

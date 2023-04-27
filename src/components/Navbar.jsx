@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/logo4.png'
+import logo from '../assets/Muy11.png'
 import CartWidget from './CartWidget'
 
 import { Link } from 'react-router-dom'

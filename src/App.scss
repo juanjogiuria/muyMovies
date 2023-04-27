@@ -15,6 +15,7 @@
 
     background: rgb(37, 32, 32);
     background: linear-gradient(180deg, rgba(37, 32, 32, 1) 10%, rgba(93, 76, 96, 1) 100%);
+    
     height: max-content;
 
     //IMPORTO ESTILOS PARA EL BANNER DE TITULO Y BUSQUEDA
@@ -27,7 +28,7 @@
 
     //ESTILOS PARA LAS CARD EN CONTENEDOR DE PELICULAS
     @import "/src/scss/_partials/movie-container";
-    
+
 
 }
 

@@ -1,7 +1,7 @@
 import './App.scss'
 import ItemListContainer from './components/ItemListContainer'
 import Navbar from './components/Navbar'
-import logo from './assets/logo.png'
+import logo from './assets/Muy10.png'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import ItemDetailContainer from './components/ItemDetailContainer'
 

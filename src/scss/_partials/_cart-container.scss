@@ -75,6 +75,7 @@
                 display: flex;
                 background-color: var(--color-bg2);
                 border: 3px solid rgba(240, 235, 141, 0.641);
+                margin: 1px;
                 box-shadow: 0 0 10px rgba(185, 108, 253, 0.433);
                 border-radius: 10px;
                 background-repeat: no-repeat;
@@ -224,6 +225,39 @@
 
         }
 
+        .cart-vacio{
+            height: 50vh;
+            width: 70%;
+            color: white;
+            text-align: center;
+            justify-items: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.221);
+            border: 1px solid rgba(245, 245, 220, 0.102);
+            border-radius: 5px;
+            text-shadow: 1px 1px black;
+
+
+            span{
+                font-family: var(--font-text);
+                display: inline;
+                font-size: 1rem;
+                margin: 5px;
+            }
+            .link{
+                margin: 5px;
+                font-family: var(--font-title);
+
+                &:hover{
+                    color: var(--color-text);
+                    transform: scale(1.02);
+                }
+            }
+        }
+
     }
 
     
@@ -232,7 +266,7 @@
         min-height: 50vh;
         margin-top: 1rem;
         align-self: center;
-        background-image: url("/src/assets/textura6.png");
+        //background-image: url("/src/assets/textura6.png");
         background-repeat: no-repeat;
         background-size: cover;
         display: flex;

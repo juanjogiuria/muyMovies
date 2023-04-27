@@ -47,7 +47,7 @@ function ItemDetailContainer() {
     <div style={{ backgroundImage: `url("${img_path_original + movie.backdrop_path}")` }} className='detail-bg' >
       <div className='detail-container'>
 
-        <img src={img_path + movie.poster_path} className="detail-img" />
+        <img src={img_path_original + movie.poster_path} className="detail-img" />
         <div className='info-container'>
           <h1 className='detail-title'>{movie.title} <p className='detail-fecha'> ( {movie.release_date} ) </p> </h1>
           <div className='genres-container'>

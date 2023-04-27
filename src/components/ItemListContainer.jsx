@@ -19,6 +19,7 @@ function ItemListContainer({ title }) {
     useEffect(() => {
         fetch(url_set).then(res => res.json()).then(data => {
             setMovies(data.results)
+            console.log(data.results)
         })
     }, [url_set])
 
@@ -27,6 +28,10 @@ function ItemListContainer({ title }) {
     let genres_url = base_url + '/genre/movie/list?' + API_key
 
     const [generos, setGeneros] = useState([])
+
+    const background = {
+        backgroundImage: `url("${bg}")`
+    }
 
     const handleCategory = (category) => {
         setUrl("https://api.themoviedb.org/3/discover/movie?" + API_key + "&with_genres=" + category)
@@ -67,7 +72,7 @@ function ItemListContainer({ title }) {
 
     return (
         <div className='body-container'>
-            <div className='bg-title'  style={{ backgroundImage: `url("${bg}")` }}>
+            <div className='bg-title'  style={background}>
                 <section className='title-search'>
 
                     <div className="title-container">

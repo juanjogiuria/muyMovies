@@ -14,32 +14,39 @@
 
     .logo {
         margin: 6px;
-        height: 80%;
+        width: 5rem;
         align-self: center;
     }
 
     .cart-container-nav {
 
-        height: 100%;
-        margin: 2px;
-        align-items: center;
-        display: flex;
+        position: relative;
+        width: auto;
+         height: auto;
+        top: 1rem;
+        right: 1rem;
 
         .cart {
+
             color: var(--color-title);
             font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 0 0 15px rgba(136, 0, 255, 0.676);
+            
+            .cart-count {
+                position: absolute;
+                top: -0.2rem;
+                right: 0.6rem;
+                font-family: var(--font-text);
+                font-weight: 900;
+                font-size: 1rem;
+                color: var(--color-text);
+                text-shadow: 1px 1px rgb(0, 0, 0);
+                
+            }
         }
 
-        .cart-count {
-            font-family: var(--font-text);
-            text-align: center;
-            font-weight: 900;
-            font-size: 20px;
-            color: var(--color-text);
-            position: relative;
-            right: 47%;
-            bottom: 18%;
-            text-shadow: 1px 1px rgb(0, 0, 0);
-        }
     }
 }

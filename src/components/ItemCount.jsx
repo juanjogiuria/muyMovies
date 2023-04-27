@@ -18,7 +18,6 @@ function ItemCount({movie}) {
 
     const onAdd = () => {
         addToCart(movie, count)
-        sumarItems(count)
     }
 
     

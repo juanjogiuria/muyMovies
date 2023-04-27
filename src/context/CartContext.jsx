@@ -5,9 +5,6 @@ const CartContext = createContext([])
 export const useCartContext = () => useContext(CartContext)
 
 
-
-
-
 export const CartContextProvider = ({ children }) => {
 
     const [cartList, setCartList] = useState([])
@@ -30,7 +27,27 @@ export const CartContextProvider = ({ children }) => {
                 precio = precio + (cart.precio * cart.cantidad)
             ))
         }
-        return precio
+        return precio.toFixed(2)
+    }
+
+    const sumarItems = () => {
+        setTotalItems(totalItems + 1)
+    }
+
+    const restarItems = () => {
+        setTotalItems(totalItems - 1)
+    }
+
+    const modificarCantidad = (id, count) => {
+        const nuevoArray = cartList.map(obj => {
+            if(obj.pelicula.id === id){
+                const nuevaCantidad = obj.cantidad + count
+                return {...obj, cantidad:nuevaCantidad }
+            }else{
+                return obj
+            }
+        })
+        setCartList(nuevoArray)
     }
 
     const addToCart = (newMovie, cantidad) => {
@@ -39,21 +56,20 @@ export const CartContextProvider = ({ children }) => {
 
 
         if (cantidad > 0) {
+            
 
-            if (!searchMovie) {
+            if (!cartList.some(movie => movie.pelicula.id === newMovie.id)) {
                 setCartList([...cartList, { pelicula: newMovie, cantidad: cantidad, precio: precio }])
+                sumarItems()
             }
             else {
-
+                modificarCantidad(newMovie.id, cantidad)
             }
 
         }
 
     }
 
-    const sumarItems = (cantidad) => {
-        setTotalItems(totalItems + cantidad)
-    }
 
     const deleteItem = (movie) => {
         console.log(movie)
@@ -73,6 +89,7 @@ export const CartContextProvider = ({ children }) => {
             totalItems,
             addToCart,
             sumarItems,
+            restarItems,
             calcularPrecio,
             calcularTotalCart,
             deleteItem
