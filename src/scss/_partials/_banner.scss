@@ -67,8 +67,9 @@
                 font-family: var(--font-text);
                 font-size: 15px;
 
-                &:focus{
-                    border-color: red;
+                &::placeholder{
+                    text-align: center;
+                    color: #f0eb8d84;
                 }
             }
 
