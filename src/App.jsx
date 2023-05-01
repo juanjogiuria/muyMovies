@@ -7,25 +7,29 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 
 import { CartContextProvider } from './context/CartContext'
 import CartContainer from './components/CartContainer'
+import Login from './components/Login'
 
 
 function App() {
   const title = logo
+
+
   return (
     <>
-      <CartContextProvider>
-        <BrowserRouter>
+      <BrowserRouter>
+        <CartContextProvider>
 
           <Navbar />
           <Routes>
             <Route path='/' element={<ItemListContainer title={title} />} />
             <Route path='/detail/:pid' element={<ItemDetailContainer />} />
-            <Route path='/cart' element={<CartContainer/>}/>
+            <Route path='/cart' element={<CartContainer />} />
+            <Route path='/login' element={<Login />} />
             <Route path='*' element={<Navigate to='/' />} />
           </Routes>
-        </BrowserRouter>
 
-      </CartContextProvider>
+        </CartContextProvider>
+      </BrowserRouter>
     </>
   )
 }

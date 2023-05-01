@@ -1,4 +1,6 @@
 import { createContext, useContext, useState } from "react";
+import { auth } from "../firebase/credenciales";
+import { onAuthStateChanged } from "firebase/auth";
 
 const CartContext = createContext([])
 
@@ -9,6 +11,20 @@ export const CartContextProvider = ({ children }) => {
 
     const [cartList, setCartList] = useState([])
     const [totalItems, setTotalItems] = useState(0)
+
+    const [user, setUser] = useState(null)
+
+    onAuthStateChanged(auth, usuario =>{
+        if(usuario){
+            setUser(usuario)
+            console.log("Sesion iniciada", user)
+        }else{
+            setUser(null)
+            console.log("Sesion cerrada", user)
+        }
+    })
+
+
 
     const calcularPrecio = (movie) => {
         if ((parseInt(movie.release_date.slice(0, 4)) === 2023)) {
@@ -87,6 +103,7 @@ export const CartContextProvider = ({ children }) => {
         <CartContext.Provider value={{
             cartList,
             totalItems,
+            user,
             addToCart,
             sumarItems,
             restarItems,
