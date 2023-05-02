@@ -6,53 +6,84 @@
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    background: radial-gradient(circle at -8.9% 51.2%, rgb(143, 67, 238) 0%, rgb(86, 54, 125) 30.9%, #382e3a 15.9%, #382e3a  50.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
+    background: radial-gradient(circle at -8.9% 51.2%, rgb(143, 67, 238) 0%, rgb(86, 54, 125) 30.9%, #382e3a 15.9%, #382e3a 50.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
 
-    h1 {
-        font-family: var(--font-title);
-        color: var(--color-title);
-        text-shadow: 2px 2px black;
-        margin: 5px;
-    }
-
-    form {
+    .login-box {
+        background-color: rgba(0, 0, 0, 0.259);
         display: flex;
         flex-direction: column;
-        color: var(--color-text);
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 70%;
+        border-radius: 3px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.116);
 
-        label {
-            margin: 1px;
-            font-family: var(--font-text);
+        h1 {
+            font-family: var(--font-title);
+            color: var(--color-title);
+            text-shadow: 2px 2px black;
+            margin: 5px;
         }
 
-        .button-submit {
-            width: 194px;
-            margin: 5px;
-            font-size: 16px;
-            padding: 10px;
-            border-radius: 3px;
-            color: white;
-            border: 1px solid var(--color-title);
-            background-color: var(--color-title);
-            cursor: pointer;
+        form {
+            display: flex;
+            flex-direction: column;
+            color: var(--color-text);
 
-            &:hover {
-                background-color: transparent;
-                color: var(--color-text);
+            label {
+                font-size: 0.8rem;
+                padding-left: 5px;
+                margin: 1px;
+                font-family: var(--font-text);
+            }
+
+            input[type="date"] {
+                background-color: #ffffff48;
+                color: black;
+              }
+
+            input {
+                outline: none;
+                padding: 0.5rem;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.377);
+                border: 0;
+                border-radius: 10px;
+                height: 30px;
+                margin-bottom: 5px;
+            }
+
+            .button-submit {
+                width: 194px;
+                margin: 5px;
+                font-size: 16px;
+                padding: 10px;
+                border-radius: 3px;
+                color: white;
+                border: 1px solid var(--color-title);
+                background-color: var(--color-title);
+                cursor: pointer;
+
+                &:hover {
+                    background-color: transparent;
+                    color: var(--color-text);
+                }
             }
         }
+
+        .button-google {
+            width: 200px;
+            cursor: pointer;
+
+        }
+
+        .button-login {
+            text-decoration: underline;
+            font-family: var(--font-text);
+            color: white;
+        }
     }
 
-    .button-google {
-        width: 200px;
-        cursor: pointer;
-
-    }
-
-    .button-login {
-        text-decoration: underline;
-        font-family: var(--font-text);
-        color: white;
-    }
 
 }

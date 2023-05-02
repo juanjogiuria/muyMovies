@@ -5,16 +5,18 @@
     justify-content: center;
     flex-wrap: wrap;
     
+    
 
     .card-container {
         width: 10rem;
         margin: 0.8rem;
         overflow: hidden;
         position: relative;
-        box-shadow: 0  0 10px rgba(0, 0, 0, 0.532);
+        box-shadow: 0  0 10px rgba(0, 0, 0, 0.054);
         background-color: var(--color-bg2);
         border-radius: 3px;
-        box-shadow: 0 0 10px #9043ee5d;
+        border: 1.5px solid rgba(0, 0, 0, 0.039);
+        box-shadow: 10px inset black;
         
 
         &:hover {
@@ -24,7 +26,7 @@
         .card-img {
             width: 100%;
             height: 200px;
-            filter: brightness(115%);
+            //filter: brightness(115%);
         }
 
         .info-container {

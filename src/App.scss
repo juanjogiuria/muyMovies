@@ -14,7 +14,7 @@
 .body-container {
 
     background: rgb(37, 32, 32);
-    background: linear-gradient(180deg, rgba(37, 32, 32, 1) 10%, rgba(93, 76, 96, 1) 100%);
+    background: radial-gradient(circle at -8.9% 51.2%, rgb(106, 0, 235) 0%, rgb(86, 54, 125) 30.9%, #382e3a 15.9%, #382e3a 50.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
     
     height: max-content;
 

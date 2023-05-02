@@ -1,6 +1,8 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../firebase/credenciales";
 import { onAuthStateChanged } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
+
 
 const CartContext = createContext([])
 
@@ -13,16 +15,21 @@ export const CartContextProvider = ({ children }) => {
     const [totalItems, setTotalItems] = useState(0)
 
     const [user, setUser] = useState(null)
+    const history = useNavigate()
 
-    onAuthStateChanged(auth, usuario =>{
-        if(usuario){
-            setUser(usuario)
-            console.log("Sesion iniciada", user)
-        }else{
-            setUser(null)
-            console.log("Sesion cerrada", user)
-        }
-    })
+    useEffect(() => {
+        onAuthStateChanged(auth, usuario =>{
+            if(usuario){
+                setUser(usuario)
+                console.log("Sesion iniciada", user)
+                history("/")
+            }else{
+                setUser(null)
+                console.log("Sesion cerrada", user)
+            }
+        })
+
+    }, [])
 
 
 
