@@ -18,6 +18,8 @@ function ItemDetailContainer() {
   const [url_set, setUrl] = useState(url)
   const [movie, setMovie] = useState([])
   const [trailer, setTrailer] = useState([])
+  const [trailerOficial, setTrailerOficial] = useState("")
+  const officialTrailer = "Official Trailer"
 
 
   useEffect(() => {
@@ -28,11 +30,13 @@ function ItemDetailContainer() {
   }, [url_set])
 
 
+
   
   useEffect(() => {
     fetch(video_url).then(res => res.json()).then(data => {
-      
       setTrailer(data)
+      const resultado = data.results.filter(objeto => objeto.name === officialTrailer)
+      setTrailerOficial(resultado[0].key)
     })
 
   }, [video_url])
@@ -42,8 +46,9 @@ function ItemDetailContainer() {
 
 
 
+
+
   return (
-    //<div>hola</div>
     <div style={{ backgroundImage: `url("${img_path_original + movie.backdrop_path}")` }} className='detail-bg' >
       <div className='detail-container'>
 
@@ -60,7 +65,7 @@ function ItemDetailContainer() {
           <h2 className='detail-overview'>{movie.overview}</h2>
           <div className='trailer-container'>
           {
-            !trailer.results ? <h1>Not a trailer</h1> : trailer.results.length ? <iframe src={`https://www.youtube.com/embed/${trailer.results[0].key}?controls=0&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0`}  frameBorder="0" className='trailer' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> : <h1>Trailer no disponible</h1>
+            !trailer.results ? <h1>Not a trailer</h1> : trailer.results.length ? <iframe src={`https://www.youtube.com/embed/${trailerOficial}?controls=0&iv_load_policy=3&modestbranding=1&rel=0&showinfo=0&cc_load_policy=1&hl=es`}  frameBorder="0" className='trailer' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe> : <h1>Trailer no disponible</h1>
           }
           </div>
           

@@ -131,22 +131,44 @@ function CartContainer() {
                 </div>
 
                 <div className="total-container">
-                    <div className='total'>
-                        <span className='total-legend'>Total:</span>
-                        <span className='total-value'>
-                            ${calcularTotalCart(cartList)}
-                        </span>
-                    </div>
-                    <Link to='/' className='button-container'>
-                        <button className='seguir-comprando'>
-                            Seguir comprando
-                        </button>
-                    </Link>
-                    <Link to='/paymentform' className="finish-container">
-                        <button className='finalizar-compra'>
-                            Finalizar compra
-                        </button>
-                    </Link>
+                    {
+                        cartList.length
+                            ?
+                            <div className='total'>
+                                <span className='total-legend'>Total:</span>
+                                <span className='total-value'>
+                                    ${calcularTotalCart(cartList)}
+                                </span>
+                            </div>
+                            :
+                            ""
+                    }
+                    {
+                        cartList.length
+                            ?
+                            <Link to='/' className='button-container'>
+                                <button className='seguir-comprando'>
+                                    Seguir comprando
+                                </button>
+                            </Link>
+                            :
+                            <Link to='/' className='button-container'>
+                                <button className='seguir-comprando'>
+                                    Volver al inicio
+                                </button>
+                            </Link>
+                    }
+                    {
+                        cartList.length
+                            ?
+                            <Link to='/paymentform' className="finish-container">
+                                <button className='finalizar-compra'>
+                                    Finalizar compra
+                                </button>
+                            </Link>
+                            :
+                            ""
+                    }
                 </div>
             </div>
         </>

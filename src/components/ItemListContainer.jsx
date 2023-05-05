@@ -75,11 +75,32 @@ function ItemListContainer({ title }) {
     return (
         <div className='body-container'>
 
-            <TitleAndSearch background={background} title={title} search_ulr={search_url}  setSearch={setSearch} setUrl={setUrl}/>
-            
-            <Categorys generos={generos} handleCategory={handleCategory}/>
+            <div className='bg-title' style={background}>
+                <section className='title-search'>
 
-            <ItemList movies={movies}/>
+                    <div className="title-container">
+
+                        <h1 className='title'><img className='title-img' src={title} /> </h1>
+                        {/* <p className="parrafo">Millones de peliculas, series y personajes por conocer. Adelante.</p> */}
+                    </div>
+
+
+                    <form className='search-container'>
+                        <input type="text" placeholder='Millones de peliculas, series y personajes por conocer. Aqui puedes buscar lo que quieras' onChange={(e) => {
+                            setSearch(e.target.value)
+                            setUrl(search_url + search)
+                        }} />
+                        <i className="fa-solid fa-magnifying-glass"></i>
+                    </form>
+
+
+                </section>
+
+            </div>
+
+            <Categorys generos={generos} handleCategory={handleCategory} />
+
+            <ItemList movies={movies} />
 
         </div>
     )

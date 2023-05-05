@@ -58,24 +58,25 @@ const PaymentForm = () => {
             <div>
               <label htmlFor="expiry">Vencimiento:</label>
               <input
-                type="number"
+                type="numer"
                 name="expiry"
                 placeholder="Vencimiento"
                 value={state.expiry}
                 onChange={handleInputChange}
                 onFocus={handleInputFocus}
+                maxLength="4"
               />
             </div>
             <div>
               <label htmlFor="cvc">CVV:</label>
               <input
-                type="number"
+                type="numer"
                 name="cvc"
-                max="3"
                 placeholder="CVC"
                 value={state.cvc}
                 onChange={handleInputChange}
                 onFocus={handleInputFocus}
+                maxLength="3"
               />
             </div>
           </div>
@@ -87,7 +88,7 @@ const PaymentForm = () => {
             ${calcularTotalCart(cartList)}
           </span>
         </div>
-        
+
         <button type="submit">Pagar</button>
       </div>
     </div>

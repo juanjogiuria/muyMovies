@@ -10,6 +10,8 @@
         background-color: rgba(0, 0, 0, 0.261);
         padding: 1.5rem;
         border-radius: 1.5rem;
+        box-shadow: 0 0 10px rgba(4, 4, 4, 0.434);
+        
 
 
         form {
@@ -34,6 +36,11 @@
                 color: white;
                 font-family: var(--font-text);
                 font-size: 1rem;
+
+                &:focus {
+                    outline: none;
+                    border: none;
+                  }
 
             }
 
