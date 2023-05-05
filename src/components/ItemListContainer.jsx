@@ -20,6 +20,7 @@ function ItemListContainer({ title }) {
     let genres_url = base_url + '/genre/movie/list?' + API_key
     let img_path = "https://image.tmdb.org/t/p/original"
     const [generos, setGeneros] = useState([])
+    const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
 
     useEffect(() => {
         fetch(url_set).then(res => res.json()).then(data => {
@@ -71,6 +72,10 @@ function ItemListContainer({ title }) {
 
     })
 
+    function handleClick(categoria) {
+        setCategoriaSeleccionada(categoria);
+    }
+
     return (
         <div className='body-container'>
 
@@ -97,7 +102,7 @@ function ItemListContainer({ title }) {
 
             </div>
 
-            <Categorys generos={generos} handleCategory={handleCategory} />
+            <Categorys generos={generos} handleCategory={handleCategory} handleClick={handleClick} categoriaSeleccionada={categoriaSeleccionada}/>
 
             <ItemList movies={movies} />
 
