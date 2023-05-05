@@ -8,6 +8,7 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 import { CartContextProvider } from './context/CartContext'
 import CartContainer from './components/CartContainer'
 import Login from './components/Login'
+import PaymentForm from './components/PaymentForm'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path='/cart' element={<CartContainer />} />
             <Route path='/login' element={<Login />} />
             <Route path='*' element={<Navigate to='/' />} />
+            <Route path='/paymentform' element={<PaymentForm />} />
           </Routes>
 
         </CartContextProvider>

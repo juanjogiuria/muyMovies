@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Card from './Card'
+import Categorys from './Categorys'
+import ItemList from './ItemList'
+import TitleAndSearch from './TitleAndSearch'
 
 let API_key = "&api_key=5d13f11367ab0f16d0af451127a33a38&language=es-ES"
 let base_url = "https://api.themoviedb.org/3"
@@ -14,7 +16,11 @@ function ItemListContainer({ title }) {
     const [search, setSearch] = useState("")
     const [bg, setBg] = useState("https://image.tmdb.org/t/p/original/lWqjXgut48IK5f5IRbDBAoO2Epp.jpg")
     const [index, setIndex] = useState(0)
+    let API_key = "api_key=5d13f11367ab0f16d0af451127a33a38&language=es-ES"
+    let base_url = "https://api.themoviedb.org/3"
+    let genres_url = base_url + '/genre/movie/list?' + API_key
     let img_path = "https://image.tmdb.org/t/p/original"
+    const [generos, setGeneros] = useState([])
 
     useEffect(() => {
         fetch(url_set).then(res => res.json()).then(data => {
@@ -23,11 +29,7 @@ function ItemListContainer({ title }) {
         })
     }, [url_set])
 
-    let API_key = "api_key=5d13f11367ab0f16d0af451127a33a38&language=es-ES"
-    let base_url = "https://api.themoviedb.org/3"
-    let genres_url = base_url + '/genre/movie/list?' + API_key
 
-    const [generos, setGeneros] = useState([])
 
     const background = {
         backgroundImage: `url("${bg}")`
@@ -72,50 +74,12 @@ function ItemListContainer({ title }) {
 
     return (
         <div className='body-container'>
-            <div className='bg-title'  style={background}>
-                <section className='title-search'>
 
-                    <div className="title-container">
+            <TitleAndSearch background={background} title={title} search_ulr={search_url}  setSearch={setSearch} setUrl={setUrl}/>
+            
+            <Categorys generos={generos} handleCategory={handleCategory}/>
 
-                        <h1 className='title'><img className='title-img' src={title} /> </h1>
-                        {/* <p className="parrafo">Millones de peliculas, series y personajes por conocer. Adelante.</p> */}
-                    </div>
-
-
-                    <form className='search-container'>
-                        <input type="text" placeholder='Millones de peliculas, series y personajes por conocer. Aqui puedes buscar lo que quieras' onChange={(e) => {
-                            setSearch(e.target.value)
-                            setUrl(search_url + search)
-                        }} />
-                        <i className="fa-solid fa-magnifying-glass"></i>
-                    </form>
-
-
-                </section>
-
-            </div>
-
-            <div className="categorys-container">
-                <ul>
-                    {
-                        (generos.genres)?.map((genre) => (
-                            <li onClick={(e) => handleCategory(genre.id)} key={genre.id} className='categorys'>{genre.name}</li>
-                        ))
-                    }
-                </ul>
-            </div>
-
-            <div className="movies-container">
-                {
-                    (movies.lenght == 0) ? <p className="not-found">Not Found</p> : movies.map((res, pos) => {
-                        return (
-                            <Card info={res} key={pos} />
-                        )
-                    })
-                }
-            </div>
-
-
+            <ItemList movies={movies}/>
 
         </div>
     )

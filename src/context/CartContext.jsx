@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../firebase/credenciales";
 import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
+import Swal from "sweetalert2";
 
 
 const CartContext = createContext([])
@@ -15,14 +16,38 @@ export const CartContextProvider = ({ children }) => {
     const [totalItems, setTotalItems] = useState(0)
 
     const [user, setUser] = useState(null)
-    const history = useNavigate()
+    const navigate = useNavigate()
 
     useEffect(() => {
         onAuthStateChanged(auth, usuario =>{
             if(usuario){
                 setUser(usuario)
                 console.log("Sesion iniciada", user)
-                history("/")
+                Swal.fire({
+                    title: 'Sesion iniciada correctamente.',
+                    width: 600,
+                    padding: '3em',
+                    color: '#716add',
+                    background: '#fff url(/images/trees.png)',
+                    backdrop: `
+                    rgba(0, 0, 0, 0.498)
+                      url("https://i.gifer.com/PYn.gif")
+                      left 50%
+                      no-repeat
+                    `,
+                    customClass: {
+                        popup: 'popup-alert2',
+                        title: 'title-alert2',
+                        container: 'alert-container',
+                        content: 'content-class',
+                        htmlContainer: 'html-container',
+                        validationMessage: 'message',
+                        icon: 'icon',
+                        confirmButton: 'confirm-button',
+        
+                    }
+                })
+                navigate("/")
             }else{
                 setUser(null)
                 console.log("Sesion cerrada", user)
@@ -102,6 +127,7 @@ export const CartContextProvider = ({ children }) => {
         const newCart = cartList.slice()
         newCart.splice(newCart.indexOf(movie), 1)
         setCartList(newCart)
+        restarItems()
 
     }
 

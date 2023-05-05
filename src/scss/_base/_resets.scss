@@ -18,3 +18,47 @@ button {
         background: none;
         font-family: var(--font-text);
 }
+
+.alert-container{
+
+    .popup-alert{
+        background-color: var(--color-bg2) !important;
+        box-shadow: 0 0 20px rgba(98, 42, 122, 0.387) !important;
+        border: 3px solid rgba(0, 0, 0, 0.315) !important;
+
+    }
+
+    .popup-alert2{
+        background-color: rgba(0, 0, 0, 0.914) !important;
+        box-shadow: 0 0 20px rgba(98, 42, 122, 0.729) !important;
+        border: 3px solid rgba(0, 0, 0, 0.315) !important;
+
+    }
+
+    .swal2-html-container{
+        font-family: var(--font-text);
+        color: var(--color-text);
+    }
+    .swal2-icon-show{
+        color: var(--color-text) !important;
+        border: 5px solid var(--color-text) !important;
+        box-shadow: 0 0 5px black;
+    }
+    .confirm-button{
+        background-color: var(--color-title) !important;
+        color: var(--color-text) !important;
+        font-family: var(--font-text) !important;
+        font-weight: 500 !important;
+    }
+    
+    .title-alert{
+        font-family: var(--font-title);
+        color: var(--color-title);
+        text-shadow: 0 1px 1px black;
+    }
+    .title-alert2{
+        font-family: var(--font-title);
+        color: var(--color-text);
+        text-shadow: 0 1px 1px black;
+    }
+}

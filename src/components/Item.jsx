@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Card(movie) {
+function Item(movie) {
 
   let img_path = "https://image.tmdb.org/t/p/w500"
   let img_path_original = "https://image.tmdb.org/t/p/original"
@@ -27,4 +27,4 @@ function Card(movie) {
   )
 }
 
-export default Card
+export default Item

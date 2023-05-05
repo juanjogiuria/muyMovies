@@ -1,0 +1,96 @@
+.payment-container {
+    background: linear-gradient(110.6deg, rgb(156, 116, 129) -18.3%, rgb(67, 54, 74) 16.4%, rgb(47, 48, 67) 68.2%, rgb(27, 23, 36) 99.1%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding-top: 5rem;
+
+    .payment-card {
+        background-color: rgba(0, 0, 0, 0.261);
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1rem;
+
+            label {
+                font-family: var(--font-text);
+                color: var(--color-text);
+                font-weight: 100;
+                margin-bottom: 0.3rem;
+            }
+
+            input {
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.402);
+                border: none;
+                height: 3rem;
+                padding: 1rem;
+                margin-bottom: 0.5rem;
+                color: white;
+                font-family: var(--font-text);
+                font-size: 1rem;
+
+            }
+
+            .expiry-cvv {
+                display: flex;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: space-between;
+                    input{
+                        width: 99.5%;
+                    }
+                }
+            }
+        }
+
+        .total{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .total-legend{
+                font-family: var(--font-text);
+                color: var(--color-text);
+                font-weight: 100;
+            }
+            .total-value{
+                font-family: var(--font-text);
+                color: var(--color-title);
+                font-weight: 900;
+                font-size: 1.5rem;
+                text-shadow: 1px 1px rgba(0, 0, 0, 0.56);
+            }
+        }
+
+        button {
+            width: 99.7%;
+            cursor: pointer;
+            font-family: var(--font-text);
+            background-color: var(--color-title);
+            padding: 10px;
+            margin-top: 0.5rem;
+            color: white;
+            border: 2px solid rgba(0, 0, 0, 0.19);
+            font-size: 1rem;
+            font-weight: 200;
+            text-shadow: 1px 1px rgba(0, 0, 0, 0.502);
+
+            &:hover{
+                background-color: var(--color-text);
+                color: black;
+                font-weight: 900;
+                text-shadow: none;
+            }
+        
+        }
+    }
+
+}
