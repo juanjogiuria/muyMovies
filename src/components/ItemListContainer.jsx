@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Categorys from './Categorys'
 import ItemList from './ItemList'
-import TitleAndSearch from './TitleAndSearch'
 
 let API_key = "&api_key=5d13f11367ab0f16d0af451127a33a38&language=es-ES"
 let base_url = "https://api.themoviedb.org/3"
