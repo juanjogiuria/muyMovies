@@ -9,6 +9,7 @@ import { CartContextProvider } from './context/CartContext'
 import CartContainer from './components/CartContainer'
 import Login from './components/Login'
 import PaymentForm from './components/PaymentForm'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
             <Route path='*' element={<Navigate to='/' />} />
             <Route path='/paymentform' element={<PaymentForm />} />
           </Routes>
+
+          <Footer/>
 
         </CartContextProvider>
       </BrowserRouter>
