@@ -30,5 +30,10 @@ Bienvenidos a Muy Movie, un app de React de tipo SPA.
     "sweetalert2": "^11.7.3"
   }`
 
+  ###Conclusion:
+  -Realize el proyecto para cumplir con todas las condiciones para la entrega final, sinceramente al proyecto le quedan muchas cosas por
+  mejorar, agregar y optimizar pero no dispuse del tiempo requerido para entregarlo completamente como me gustaria a causa de mi carga horaria laboral, 
+  aun asi estoy muy conforme con el resultado y agradecido al profesor por su dedicacion y los conocimientos incorporados.
+
 
 
