@@ -2,7 +2,10 @@
 
 ![Index de Muy Movie](./src/assets/readme.png)
 
-## **Ecommerce de peliculas** (Proyecto creado para el curso de React.js en Coder House)
+## **Ecommerce de peliculas** 
+(Proyecto creado para el curso de React.js en Coder House)
+
+**[Link de Netlify](https://muymovie.netlify.app/)**
 
 Bienvenidos a Muy Movie, un app de React de tipo SPA.
 
