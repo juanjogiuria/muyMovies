@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { useCartContext } from '../context/CartContext'
+import Swal from 'sweetalert2'
 
 function ItemCount({movie}) {
 
     const {addToCart , cartList, sumarItems} = useCartContext()
 
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(1)
 
     const handleCountIncrease = () => {
         setCount(count + 1)
@@ -18,6 +19,24 @@ function ItemCount({movie}) {
 
     const onAdd = () => {
         addToCart(movie, count)
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Producto agregado correctamente',
+            showConfirmButton: false,
+            timer: 1500,
+            customClass: {
+                popup: 'popup-alert',
+                title: 'title-alert',
+                container: 'alert-container',
+                content: 'content-class',
+                htmlContainer: 'html-container',
+                validationMessage: 'message',
+                icon: 'icon',
+                confirmButton: 'confirm-button',
+
+            }
+          })
     }
 
     
