@@ -91,6 +91,7 @@ function CartContainer() {
 
                                     <img className='img-item-cart' src={img_path + movie.pelicula.poster_path} alt="" />
 
+                                    
                                     <Link to={`/detail/${movie.pelicula.id}`} className='title-genre-container'>
                                         <h1 className="title-item-cart"> {movie.pelicula.title} </h1>
                                         <div className='genre-item-cart'>

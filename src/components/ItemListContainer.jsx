@@ -23,7 +23,9 @@ function ItemListContainer({ title }) {
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
 
     useEffect(() => {
-        fetch(url_set).then(res => res.json()).then(data => {
+        fetch(url_set)
+        .then(res => res.json())
+        .then(data => {
             setMovies(data.results)
             console.log(data.results)
         })
@@ -40,7 +42,9 @@ function ItemListContainer({ title }) {
     }
 
     useEffect(() => {
-        fetch(genres_url).then(res => res.json()).then(data => {
+        fetch(genres_url)
+        .then(res => res.json())
+        .then(data => {
             setGeneros(data)
         })
 

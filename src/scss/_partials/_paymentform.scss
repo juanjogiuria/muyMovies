@@ -100,4 +100,24 @@
         }
     }
 
+    .payment-checked{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        min-height: 30vh;
+        
+        h4{
+            font-family: var(--font-title);
+            color: var(--color-title);
+            font-size: 2rem;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.57);
+        }
+        p{
+            font-family: var(--font-text);
+            color: var(--color-text);
+            font-size: 1.5rem;
+        }
+    }
+
 }

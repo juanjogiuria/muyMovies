@@ -4,6 +4,7 @@ import "react-credit-cards-2/dist/lib/styles.scss"
 import { useCartContext } from '../context/CartContext';
 
 const PaymentForm = () => {
+  const [paymentChecked, setPaymentChecked] = useState(false);
   const { calcularTotalCart, cartList } = useCartContext()
   const [state, setState] = useState({
     number: '',
@@ -21,6 +22,10 @@ const PaymentForm = () => {
 
   const handleInputFocus = (evt) => {
     setState((prev) => ({ ...prev, focus: evt.target.name }));
+  }
+
+  const paymentMade = () => {
+    setPaymentChecked(true)
   }
 
   return (
@@ -88,9 +93,21 @@ const PaymentForm = () => {
             ${calcularTotalCart(cartList)}
           </span>
         </div>
-
-        <button type="submit">Pagar</button>
+        {
+          !paymentChecked ? <button type="submit" onClick={() => paymentMade()}>Pagar</button> : ""
+        }
       </div>
+
+      {
+        paymentChecked 
+        ? 
+        <div className='payment-checked'>
+          <h4>Pago realizado con exito</h4>
+          <p>Gracias por su compra!</p>
+        </div>
+        :
+        ""
+      }
     </div>
   );
 }
